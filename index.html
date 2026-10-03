@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>University of Petra Dental Center | Book a free appointment</title>
+    <meta
+      name="description"
+      content="Book a free appointment at the University of Petra Dental Center. Eligible dentistry students treat patients under faculty supervision."
+    />
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+    <link rel="preload" as="image" href="assets/images/slide-1.webp" type="image/webp" />
+    <link rel="preload" as="font" href="assets/fonts/A2Mazarin-Regular.otf" type="font/otf" crossorigin />
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="visually-hidden-focusable" href="#book">Skip to booking</a>
+    <header class="site-header">
+      <div class="container header-inner d-flex align-items-center justify-content-between gap-3">
+        <a class="brand" href="index.html" aria-label="University of Petra Dental Center">
+          <img src="assets/images/logo-wide.png" width="340" height="40" alt="UPDC University of Petra Dental Center" />
+        </a>
+        <div class="d-flex align-items-center gap-3">
+          <nav class="lang-switch" aria-label="Language">
+            <a href="index.html" hreflang="en" aria-current="true">EN</a>
+            <span aria-hidden="true">|</span>
+            <a href="ar/index.html" hreflang="ar" lang="ar">AR</a>
+          </nav>
+          <a class="btn-book" href="#book">Book now</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Clinic highlights">
+      <div id="clinicSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6500">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="hero-slide">
+              <picture>
+                <source srcset="assets/images/slide-1.webp" type="image/webp" />
+                <img src="assets/images/slide-1.jpg" width="1280" height="720" alt="Dental chair in the University of Petra training clinic" fetchpriority="high" />
+              </picture>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero-slide">
+              <picture>
+                <source srcset="assets/images/slide-2.webp" type="image/webp" />
+                <img src="assets/images/slide-2.jpg" width="1280" height="720" alt="Teaching clinic with a row of dental chairs" loading="lazy" />
+              </picture>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero-slide">
+              <picture>
+                <source srcset="assets/images/slide-3.webp" type="image/webp" />
+                <img src="assets/images/slide-3.jpg" width="1280" height="720" alt="Close view of a modern dental treatment bay" loading="lazy" />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#clinicSlider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#clinicSlider" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="container">
+          <h1>Free dental care for everyone.</h1>
+          <p>Student dentists, supervised by faculty. Open to campus and the community.</p>
+          <div class="hero-actions">
+            <a class="btn-ice" href="#book">Book an appointment</a>
+            <button class="btn-deep" type="button" data-bs-toggle="modal" data-bs-target="#howModal">How it works</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="container">
+        <h2>Book an appointment</h2>
+        <div id="booking-success" class="alert alert-success d-none" tabindex="-1" role="status">
+          Your request was sent. We will confirm the appointment by SMS.
+        </div>
+        <form id="booking-form" class="needs-validation" novalidate>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label class="form-label" for="fullName">Full name</label>
+              <input class="form-control" id="fullName" name="fullName" type="text" autocomplete="name" required />
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="mobile">Mobile</label>
+              <input class="form-control" id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" required />
+              <div class="invalid-feedback">Please enter a mobile number.</div>
+            </div>
+            <div class="col-12">
+              <p class="form-label mb-2">Need</p>
+              <div class="need-group" role="radiogroup" aria-label="Treatment need">
+                <label class="need-chip">
+                  <input type="radio" name="need" value="checkup" checked />
+                  <span>Check-up</span>
+                </label>
+                <label class="need-chip">
+                  <input type="radio" name="need" value="cleaning" />
+                  <span>Cleaning</span>
+                </label>
+                <label class="need-chip">
+                  <input type="radio" name="need" value="filling" />
+                  <span>Filling</span>
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="student">Eligible student</label>
+              <select class="form-select" id="student" name="student" required></select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="date">Date</label>
+              <input class="form-control" id="date" name="date" type="date" required />
+              <div class="invalid-feedback">Please choose a date.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="time">Time</label>
+              <select class="form-select" id="time" name="time" required>
+                <option value="">Select a time</option>
+                <option>09:30</option>
+                <option>11:00</option>
+                <option>12:30</option>
+                <option>13:30</option>
+                <option>15:00</option>
+              </select>
+              <div class="invalid-feedback">Please choose a time.</div>
+            </div>
+            <div class="col-12">
+              <button class="btn-confirm" type="submit">Confirm appointment</button>
+              <p class="form-note">Treatment is free. Visits may last 2–3 hours.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row gy-4 align-items-start">
+          <div class="col-md-4">
+            <img class="footer-logo" src="assets/images/logo-lockup.png" width="140" height="111" alt="UPDC" />
+          </div>
+          <div class="col-md-4">
+            <span class="footer-label">Landline</span>
+            <a href="tel:+96265799530">0096265799530</a><br />
+            <span class="footer-label mt-3">Email</span>
+            <a href="mailto:divan@uop.edu.jo">divan@uop.edu.jo</a>
+          </div>
+          <div class="col-md-4">
+            <span class="footer-label">Airport Road</span>
+            Amman<br />
+            P.O. Box 961343
+          </div>
+        </div>
+        <p class="footer-copy">© <span data-year>2026</span> University of Petra</p>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="howModal" tabindex="-1" aria-labelledby="howTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="howTitle">How it works</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ol class="how-list">
+              <li>Enter your name and mobile number.</li>
+              <li>Choose the care you need.</li>
+              <li>Select an eligible supervised student from the list.</li>
+              <li>Pick a date and time. We confirm by SMS.</li>
+            </ol>
+            <p class="mb-0 mt-3">Care is free. Faculty supervise every visit. Appointments are usually 2–3 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="vendor/bootstrap.bundle.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

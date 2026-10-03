@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>مركز جامعة البترا لطب الأسنان | احجز موعدًا مجانيًا</title>
+    <meta
+      name="description"
+      content="احجز موعدًا مجانيًا في مركز جامعة البترا لطب الأسنان. يعالجك طالب مؤهل تحت إشراف أعضاء الهيئة التدريسية."
+    />
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png" />
+    <link rel="preload" as="image" href="../assets/images/slide-1.webp" type="image/webp" />
+    <link rel="preload" as="font" href="../assets/fonts/29LTIdris-Light.ttf" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <a class="visually-hidden-focusable" href="#book">تخطَّ إلى الحجز</a>
+    <header class="site-header">
+      <div class="container header-inner d-flex align-items-center justify-content-between gap-3">
+        <a class="brand" href="index.html" aria-label="مركز جامعة البترا لطب الأسنان">
+          <img src="../assets/images/logo-wide.png" width="340" height="40" alt="مركز جامعة البترا لطب الأسنان UPDC" />
+        </a>
+        <div class="d-flex align-items-center gap-3">
+          <nav class="lang-switch" aria-label="اللغة">
+            <a href="../index.html" hreflang="en" lang="en">EN</a>
+            <span aria-hidden="true">|</span>
+            <a href="index.html" hreflang="ar" aria-current="true">AR</a>
+          </nav>
+          <a class="btn-book" href="#book">احجز الآن</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="عيادات الكلية">
+      <div id="clinicSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6500">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="الشريحة 1"></button>
+          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="1" aria-label="الشريحة 2"></button>
+          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="2" aria-label="الشريحة 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="hero-slide">
+              <picture>
+                <source srcset="../assets/images/slide-1.webp" type="image/webp" />
+                <img src="../assets/images/slide-1.jpg" width="1280" height="720" alt="كرسي علاج في عيادة تدريب جامعة البترا" fetchpriority="high" />
+              </picture>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero-slide">
+              <picture>
+                <source srcset="../assets/images/slide-2.webp" type="image/webp" />
+                <img src="../assets/images/slide-2.jpg" width="1280" height="720" alt="صف من كراسي العيادة التعليمية" loading="lazy" />
+              </picture>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero-slide">
+              <picture>
+                <source srcset="../assets/images/slide-3.webp" type="image/webp" />
+                <img src="../assets/images/slide-3.jpg" width="1280" height="720" alt="ركن علاج حديث في العيادة" loading="lazy" />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#clinicSlider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">السابق</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#clinicSlider" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">التالي</span>
+        </button>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="container">
+          <h1>علاج أسنان مجاني للجميع.</h1>
+          <p>طلبة طب الأسنان تحت إشراف أعضاء الهيئة التدريسية. مفتوح للحرم الجامعي والمجتمع.</p>
+          <div class="hero-actions">
+            <a class="btn-ice" href="#book">احجز موعدًا</a>
+            <button class="btn-deep" type="button" data-bs-toggle="modal" data-bs-target="#howModal">كيف يعمل</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="container">
+        <h2>احجز موعدًا</h2>
+        <div id="booking-success" class="alert alert-success d-none" tabindex="-1" role="status">
+          تم إرسال طلبك. سنؤكّد الموعد عبر رسالة نصية.
+        </div>
+        <form id="booking-form" class="needs-validation" novalidate>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label class="form-label" for="fullName">الاسم الكامل</label>
+              <input class="form-control" id="fullName" name="fullName" type="text" autocomplete="name" required />
+              <div class="invalid-feedback">يرجى إدخال الاسم الكامل.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="mobile">الجوال</label>
+              <input class="form-control" id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" required />
+              <div class="invalid-feedback">يرجى إدخال رقم الجوال.</div>
+            </div>
+            <div class="col-12">
+              <p class="form-label mb-2">الاحتياج</p>
+              <div class="need-group" role="radiogroup" aria-label="نوع العلاج">
+                <label class="need-chip">
+                  <input type="radio" name="need" value="checkup" checked />
+                  <span>فحص</span>
+                </label>
+                <label class="need-chip">
+                  <input type="radio" name="need" value="cleaning" />
+                  <span>تنظيف</span>
+                </label>
+                <label class="need-chip">
+                  <input type="radio" name="need" value="filling" />
+                  <span>حشوة</span>
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="student">الطالب المؤهل</label>
+              <select class="form-select" id="student" name="student" required></select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="date">التاريخ</label>
+              <input class="form-control" id="date" name="date" type="date" required />
+              <div class="invalid-feedback">يرجى اختيار التاريخ.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="time">الوقت</label>
+              <select class="form-select" id="time" name="time" required>
+                <option value="">اختر وقتًا</option>
+                <option>09:30</option>
+                <option>11:00</option>
+                <option>12:30</option>
+                <option>13:30</option>
+                <option>15:00</option>
+              </select>
+              <div class="invalid-feedback">يرجى اختيار الوقت.</div>
+            </div>
+            <div class="col-12">
+              <button class="btn-confirm" type="submit">تأكيد الموعد</button>
+              <p class="form-note">العلاج مجاني. قد تستمر الزيارة من ساعتين إلى ثلاث ساعات.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row gy-4 align-items-start">
+          <div class="col-md-4">
+            <img class="footer-logo" src="../assets/images/logo-lockup.png" width="140" height="111" alt="UPDC" />
+          </div>
+          <div class="col-md-4">
+            <span class="footer-label">أرضي</span>
+            <a href="tel:+96265799530">0096265799530</a><br />
+            <span class="footer-label mt-3">البريد الإلكتروني</span>
+            <a href="mailto:divan@uop.edu.jo">divan@uop.edu.jo</a>
+          </div>
+          <div class="col-md-4">
+            <span class="footer-label">طريق المطار</span>
+            عمّان<br />
+            صندوق بريد 961343
+          </div>
+        </div>
+        <p class="footer-copy">© <span data-year>2026</span> جامعة البترا</p>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="howModal" tabindex="-1" aria-labelledby="howTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="howTitle">كيف يعمل</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <ol class="how-list">
+              <li>أدخل اسمك ورقم جوالك.</li>
+              <li>اختر نوع الرعاية التي تحتاجها.</li>
+              <li>اختر طالبًا مؤهلًا من القائمة.</li>
+              <li>حدد التاريخ والوقت. نؤكّد عبر رسالة نصية.</li>
+            </ol>
+            <p class="mb-0 mt-3">العلاج مجاني. يشرف عضو هيئة تدريس على كل زيارة. المواعيد عادة من ساعتين إلى ثلاث ساعات.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../vendor/bootstrap.bundle.min.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>
