@@ -661,7 +661,7 @@ input[type="date"] {
 
 @media (min-width: 1500px) {
   html {
-    font-size: 19.5px;
+    font-size: 19.5px; /* slightly larger than default, not oversized */
   }
 
   .hero h1 {
