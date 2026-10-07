@@ -9,8 +9,9 @@
       content="Book a free appointment at the University of Petra Dental Center. Eligible dentistry students treat patients under faculty supervision."
     />
     <link rel="icon" href="assets/images/favicon.png" type="image/png" />
-    <link rel="preload" as="image" href="assets/images/slide-1.webp" type="image/webp" />
+    <link rel="preload" as="image" href="assets/images/slide-2.webp" type="image/webp" />
     <link rel="preload" as="font" href="assets/fonts/A2Mazarin-Regular.otf" type="font/otf" crossorigin />
+    <link rel="preload" as="font" href="assets/fonts/HelveticaNeueLTArabic.ttf" type="font/ttf" crossorigin />
     <link rel="stylesheet" href="vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -33,46 +34,11 @@
     </header>
 
     <section class="hero" aria-label="Clinic highlights">
-      <div id="clinicSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6500">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="hero-slide">
-              <picture>
-                <source srcset="assets/images/slide-1.webp" type="image/webp" />
-                <img src="assets/images/slide-1.jpg" width="1280" height="720" alt="Dental chair in the University of Petra training clinic" fetchpriority="high" />
-              </picture>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="hero-slide">
-              <picture>
-                <source srcset="assets/images/slide-2.webp" type="image/webp" />
-                <img src="assets/images/slide-2.jpg" width="1280" height="720" alt="Teaching clinic with a row of dental chairs" loading="lazy" />
-              </picture>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="hero-slide">
-              <picture>
-                <source srcset="assets/images/slide-3.webp" type="image/webp" />
-                <img src="assets/images/slide-3.jpg" width="1280" height="720" alt="Close view of a modern dental treatment bay" loading="lazy" />
-              </picture>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#clinicSlider" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#clinicSlider" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      <div class="hero-slide">
+        <picture>
+          <source srcset="assets/images/slide-2.webp" type="image/webp" />
+          <img src="assets/images/slide-2.jpg" width="1280" height="720" alt="Teaching clinic with a row of dental chairs" fetchpriority="high" />
+        </picture>
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-copy">
@@ -196,58 +162,19 @@
               <input class="form-control" id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" required />
               <div class="invalid-feedback">Please enter a mobile number.</div>
             </div>
-            <div class="col-12">
-              <p class="form-label mb-2">Need</p>
-              <div class="need-group" role="radiogroup" aria-label="Treatment need">
-                <label class="need-chip">
-                  <input type="radio" name="need" value="exam" checked />
-                  <span>Dental exam</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="rootcanal" />
-                  <span>Anterior root canal</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="extraction" />
-                  <span>Extraction</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="cavities" />
-                  <span>Cavity treatment</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="denture_replace" />
-                  <span>Replace denture</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="denture_full" />
-                  <span>Complete denture</span>
-                </label>
-              </div>
-              <p class="denture-note" id="denture-note" hidden>
-                Removable dentures are not fully free. A symbolic laboratory fee applies.
-              </p>
+            <div class="col-md-6">
+              <label class="form-label" for="treatment">Treatment needed</label>
+              <input class="form-control" id="treatment" name="treatment" type="text" placeholder="e.g. dental exam, extraction" required />
+              <div class="invalid-feedback">Please enter the treatment you need.</div>
             </div>
-            <div class="col-12">
-              <label class="form-label" for="student">Eligible student</label>
-              <select class="form-select" id="student" name="student" required></select>
+            <div class="col-md-6">
+              <label class="form-label" for="doctor">Preferred doctor <span class="optional-hint">(optional)</span></label>
+              <input class="form-control" id="doctor" name="doctor" type="text" autocomplete="off" />
             </div>
             <div class="col-md-6">
               <label class="form-label" for="date">Date</label>
               <input class="form-control" id="date" name="date" type="date" required />
               <div class="invalid-feedback">Please choose a date.</div>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label" for="time">Time</label>
-              <select class="form-select" id="time" name="time" required>
-                <option value="">Select a time</option>
-                <option>09:30</option>
-                <option>11:00</option>
-                <option>12:30</option>
-                <option>13:30</option>
-                <option>15:00</option>
-              </select>
-              <div class="invalid-feedback">Please choose a time.</div>
             </div>
             <div class="col-12">
               <button class="btn-confirm" type="submit">Confirm appointment</button>
@@ -263,20 +190,12 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div class="row gy-4 align-items-start">
-          <div class="col-md-4">
-            <img class="footer-logo" src="assets/images/logo-lockup.png" width="140" height="111" alt="UPDC" />
-          </div>
-          <div class="col-md-4">
-            <span class="footer-label">Landline</span>
-            <a href="tel:+96265799530">0096265799530</a><br />
-            <span class="footer-label mt-3">Email</span>
+        <div class="footer-bar">
+          <img class="footer-logo" src="assets/images/logo-lockup.png" width="90" height="72" alt="UPDC" />
+          <div class="footer-contact">
+            <a href="tel:+96265799530">0096265799530</a>
+            <span class="footer-sep" aria-hidden="true">·</span>
             <a href="mailto:divan@uop.edu.jo">divan@uop.edu.jo</a>
-          </div>
-          <div class="col-md-4">
-            <span class="footer-label">Airport Road</span>
-            Amman<br />
-            P.O. Box 961343
           </div>
         </div>
         <p class="footer-copy">© <span data-year>2026</span> University of Petra</p>

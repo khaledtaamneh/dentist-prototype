@@ -12,9 +12,9 @@
   --radius: 999px;
   --shadow: 0 10px 30px rgba(0, 61, 76, 0.08);
   --header-h: 88px;
-  --font: "A2 Mazarin", "Segoe UI", Tahoma, sans-serif;
-  --serif: "A2 Mazarin", Georgia, "Times New Roman", serif;
-  --arabic: "29LT Idris", "Helvetica Neue LT Arabic", Tahoma, sans-serif;
+  --font: "Helvetica Neue LT Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --display: "A2 Mazarin", Georgia, "Times New Roman", serif;
+  --display-ar: "29LT Idris", "Helvetica Neue LT Arabic", Tahoma, sans-serif;
 }
 
 @font-face {
@@ -41,6 +41,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Helvetica Neue LT Arabic";
+  src: url("../assets/fonts/HelveticaNeueLTArabic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -63,7 +71,7 @@ body {
 
 [dir="rtl"] body,
 [dir="rtl"] {
-  font-family: var(--arabic), var(--font);
+  font-family: var(--font);
 }
 
 img {
@@ -185,7 +193,8 @@ a {
   width: 100%;
   height: clamp(420px, 62vh, 640px);
   object-fit: cover;
-  object-position: 70% center;
+  object-position: 28% center;
+  display: block;
 }
 
 .hero-overlay {
@@ -215,7 +224,7 @@ a {
 }
 
 .hero h1 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(2.2rem, 5vw, 4.2rem);
   line-height: 1.08;
@@ -225,7 +234,7 @@ a {
 }
 
 [dir="rtl"] .hero h1 {
-  font-family: var(--arabic);
+  font-family: var(--display-ar);
   max-width: 14ch;
 }
 
@@ -240,24 +249,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-}
-
-.carousel-indicators [data-bs-target] {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0.45;
-  border: 0;
-}
-
-.carousel-indicators .active {
-  opacity: 1;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-  width: 8%;
 }
 
 .services {
@@ -299,7 +290,7 @@ a {
 }
 
 .services-title {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(2rem, 4.2vw, 3.15rem);
   color: var(--teal-deep);
@@ -308,7 +299,7 @@ a {
 }
 
 [dir="rtl"] .services-title {
-  font-family: var(--arabic);
+  font-family: var(--display-ar);
   padding-right: min(72px, 12vw);
 }
 
@@ -396,7 +387,7 @@ a {
 }
 
 .book h2 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(1.95rem, 3.2vw, 2.55rem);
   color: var(--teal-deep);
@@ -404,7 +395,12 @@ a {
 }
 
 [dir="rtl"] .book h2 {
-  font-family: var(--arabic);
+  font-family: var(--display-ar);
+}
+
+.optional-hint {
+  color: var(--muted);
+  font-size: 0.88em;
 }
 
 .form-label {
@@ -413,30 +409,14 @@ a {
   margin-bottom: 0.4rem;
 }
 
-.form-control,
-.form-select {
+.form-control {
   border: 1px solid var(--line);
   border-radius: 12px;
   min-height: 52px;
   padding: 0.72rem 1rem;
   color: var(--text);
   font-size: 1.05rem;
-}
-
-.form-select {
-  padding-right: 2.7rem;
-  padding-left: 0.95rem;
-  background-position: right 0.95rem center;
-  background-repeat: no-repeat;
-  background-size: 16px 12px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-[dir="rtl"] .form-select {
-  padding-right: 0.95rem;
-  padding-left: 2.7rem;
-  background-position: left 0.95rem center;
+  font-family: var(--font);
 }
 
 input[type="date"] {
@@ -448,44 +428,9 @@ input[type="date"] {
   text-align: right;
 }
 
-.form-control:focus,
-.form-select:focus {
+.form-control:focus {
   border-color: var(--teal);
   box-shadow: 0 0 0 3px rgba(79, 134, 142, 0.18);
-}
-
-.need-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-}
-
-.need-chip {
-  position: relative;
-}
-
-.need-chip input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.need-chip span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 42px;
-  padding: 0.4rem 1rem;
-  border-radius: var(--radius);
-  background: var(--ice-soft);
-  color: var(--teal-deep);
-  cursor: pointer;
-  user-select: none;
-  font-size: 1.02rem;
-}
-
-.need-chip input:checked + span,
-.need-chip input:focus-visible + span {
-  background: var(--ice);
 }
 
 .btn-confirm {
@@ -509,21 +454,11 @@ input[type="date"] {
   color: #fff;
 }
 
-.form-note,
-.denture-note {
+.form-note {
   color: var(--muted);
   text-align: center;
   margin-top: 0.85rem;
   font-size: 1.02rem;
-}
-
-.denture-note {
-  text-align: start;
-  color: var(--teal-deep);
-  background: var(--ice-soft);
-  border-radius: 12px;
-  padding: 0.7rem 0.9rem;
-  margin-top: 0.75rem;
 }
 
 .submit-error {
@@ -543,26 +478,48 @@ input[type="date"] {
 
 .site-footer {
   background: var(--wash);
-  padding: 2.4rem 0 1.4rem;
+  padding: 1.15rem 0 0.9rem;
   color: var(--teal-deep);
 }
 
+.footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem 1.4rem;
+}
+
 .footer-logo {
-  height: 88px;
+  height: 52px;
   width: auto;
 }
 
-.footer-label {
-  display: block;
-  margin-bottom: 0.15rem;
-  font-size: 1.05rem;
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.85rem;
+  font-size: 1.02rem;
+}
+
+.footer-contact a {
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-sep {
+  color: var(--muted);
 }
 
 .footer-copy {
   text-align: center;
   color: var(--muted);
-  margin: 1.6rem 0 0;
-  font-size: 1rem;
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
 }
 
 .modal-content {
@@ -592,14 +549,14 @@ input[type="date"] {
 }
 
 .success-modal h2 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 1.7rem;
   color: var(--teal-deep);
   margin: 0 0 0.65rem;
 }
 
 [dir="rtl"] .success-modal h2 {
-  font-family: var(--arabic);
+  font-family: var(--display-ar);
 }
 
 .success-modal p {
@@ -691,5 +648,38 @@ input[type="date"] {
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (min-width: 1500px) {
+  html {
+    font-size: 21px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 4.4vw, 5.1rem);
+  }
+
+  .services-title {
+    font-size: clamp(2.6rem, 3.4vw, 3.7rem);
+  }
+
+  .book h2 {
+    font-size: 2.9rem;
+  }
+
+  .hero-slide img,
+  .hero-slide {
+    min-height: 680px;
+    height: 680px;
+  }
+
+  .service-icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .service-card h3 {
+    font-size: 1.16rem;
   }
 }

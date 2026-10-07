@@ -9,8 +9,9 @@
       content="احجز موعدًا مجانيًا في مركز جامعة البترا لطب الأسنان. يعالجك طالب مؤهل تحت إشراف أعضاء الهيئة التدريسية."
     />
     <link rel="icon" href="../assets/images/favicon.png" type="image/png" />
-    <link rel="preload" as="image" href="../assets/images/slide-1.webp" type="image/webp" />
+    <link rel="preload" as="image" href="../assets/images/slide-2.webp" type="image/webp" />
     <link rel="preload" as="font" href="../assets/fonts/29LTIdris-Light.ttf" type="font/ttf" crossorigin />
+    <link rel="preload" as="font" href="../assets/fonts/HelveticaNeueLTArabic.ttf" type="font/ttf" crossorigin />
     <link rel="stylesheet" href="../vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
@@ -33,46 +34,11 @@
     </header>
 
     <section class="hero" aria-label="عيادات الكلية">
-      <div id="clinicSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6500">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="الشريحة 1"></button>
-          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="1" aria-label="الشريحة 2"></button>
-          <button type="button" data-bs-target="#clinicSlider" data-bs-slide-to="2" aria-label="الشريحة 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="hero-slide">
-              <picture>
-                <source srcset="../assets/images/slide-1.webp" type="image/webp" />
-                <img src="../assets/images/slide-1.jpg" width="1280" height="720" alt="كرسي علاج في عيادة تدريب جامعة البترا" fetchpriority="high" />
-              </picture>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="hero-slide">
-              <picture>
-                <source srcset="../assets/images/slide-2.webp" type="image/webp" />
-                <img src="../assets/images/slide-2.jpg" width="1280" height="720" alt="صف من كراسي العيادة التعليمية" loading="lazy" />
-              </picture>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="hero-slide">
-              <picture>
-                <source srcset="../assets/images/slide-3.webp" type="image/webp" />
-                <img src="../assets/images/slide-3.jpg" width="1280" height="720" alt="ركن علاج حديث في العيادة" loading="lazy" />
-              </picture>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#clinicSlider" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">السابق</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#clinicSlider" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">التالي</span>
-        </button>
+      <div class="hero-slide">
+        <picture>
+          <source srcset="../assets/images/slide-2.webp" type="image/webp" />
+          <img src="../assets/images/slide-2.jpg" width="1280" height="720" alt="صف من كراسي العيادة التعليمية" fetchpriority="high" />
+        </picture>
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-copy">
@@ -191,62 +157,23 @@
               <div class="invalid-feedback">يرجى إدخال الاسم الكامل.</div>
             </div>
             <div class="col-md-6">
-              <label class="form-label" for="mobile">الجوال</label>
+              <label class="form-label" for="mobile">الموبايل</label>
               <input class="form-control" id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" required />
-              <div class="invalid-feedback">يرجى إدخال رقم الجوال.</div>
+              <div class="invalid-feedback">يرجى إدخال رقم الموبايل.</div>
             </div>
-            <div class="col-12">
-              <p class="form-label mb-2">الاحتياج</p>
-              <div class="need-group" role="radiogroup" aria-label="نوع العلاج">
-                <label class="need-chip">
-                  <input type="radio" name="need" value="exam" checked />
-                  <span>فحص الأسنان</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="rootcanal" />
-                  <span>سحب عصب الأسنان الأمامية</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="extraction" />
-                  <span>خلع الأسنان والجذور</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="cavities" />
-                  <span>علاج تسوسات الأسنان</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="denture_replace" />
-                  <span>استبدال طقم متحرك</span>
-                </label>
-                <label class="need-chip">
-                  <input type="radio" name="need" value="denture_full" />
-                  <span>طقم أسنان كامل متحرك</span>
-                </label>
-              </div>
-              <p class="denture-note" id="denture-note" hidden>
-                الطقم المتحرك غير مجاني بالكامل. يُدفع مبلغ رمزي لتغطية تكلفة المختبر فقط.
-              </p>
+            <div class="col-md-6">
+              <label class="form-label" for="treatment">العلاج المطلوب</label>
+              <input class="form-control" id="treatment" name="treatment" type="text" placeholder="مثال: فحص الأسنان، خلع" required />
+              <div class="invalid-feedback">يرجى إدخال العلاج المطلوب.</div>
             </div>
-            <div class="col-12">
-              <label class="form-label" for="student">الطالب المؤهل</label>
-              <select class="form-select" id="student" name="student" required></select>
+            <div class="col-md-6">
+              <label class="form-label" for="doctor">الطبيب المفضّل <span class="optional-hint">(اختياري)</span></label>
+              <input class="form-control" id="doctor" name="doctor" type="text" autocomplete="off" />
             </div>
             <div class="col-md-6">
               <label class="form-label" for="date">التاريخ</label>
               <input class="form-control" id="date" name="date" type="date" required />
               <div class="invalid-feedback">يرجى اختيار التاريخ.</div>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label" for="time">الوقت</label>
-              <select class="form-select" id="time" name="time" required>
-                <option value="">اختر وقتًا</option>
-                <option>09:30</option>
-                <option>11:00</option>
-                <option>12:30</option>
-                <option>13:30</option>
-                <option>15:00</option>
-              </select>
-              <div class="invalid-feedback">يرجى اختيار الوقت.</div>
             </div>
             <div class="col-12">
               <button class="btn-confirm" type="submit">تأكيد الموعد</button>
@@ -262,20 +189,12 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div class="row gy-4 align-items-start">
-          <div class="col-md-4">
-            <img class="footer-logo" src="../assets/images/logo-lockup.png" width="140" height="111" alt="UPDC" />
-          </div>
-          <div class="col-md-4">
-            <span class="footer-label">أرضي</span>
-            <a href="tel:+96265799530">0096265799530</a><br />
-            <span class="footer-label mt-3">البريد الإلكتروني</span>
+        <div class="footer-bar">
+          <img class="footer-logo" src="../assets/images/logo-lockup.png" width="90" height="72" alt="UPDC" />
+          <div class="footer-contact">
+            <a href="tel:+96265799530">0096265799530</a>
+            <span class="footer-sep" aria-hidden="true">·</span>
             <a href="mailto:divan@uop.edu.jo">divan@uop.edu.jo</a>
-          </div>
-          <div class="col-md-4">
-            <span class="footer-label">طريق المطار</span>
-            عمّان<br />
-            صندوق بريد 961343
           </div>
         </div>
         <p class="footer-copy">© <span data-year>2026</span> جامعة البترا</p>
