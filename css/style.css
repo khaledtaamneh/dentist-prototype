@@ -491,7 +491,7 @@ input[type="date"] {
 }
 
 .footer-logo {
-  height: 58px;
+  height: 78px;
   width: auto;
 }
 
@@ -500,7 +500,7 @@ input[type="date"] {
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 1rem 2.2rem;
-  font-size: 1.02rem;
+  font-size: 0.86rem;
 }
 
 .footer-item {
@@ -513,7 +513,7 @@ input[type="date"] {
 
 .footer-label {
   display: block;
-  font-size: 0.92rem;
+  font-size: 0.76rem;
   color: var(--muted);
   margin-bottom: 0.05rem;
 }
@@ -530,7 +530,7 @@ input[type="date"] {
   text-align: center;
   color: var(--muted);
   margin: 0.85rem 0 0;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 
 .modal-content {
