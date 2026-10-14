@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var CLINIC_INBOX = "divan@uop.edu.jo";
+  var CLINIC_INBOX = "UPDC@uop.edu.jo";
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/" + CLINIC_INBOX;
 
   var isAr = (document.documentElement.lang || "").toLowerCase().indexOf("ar") === 0;
