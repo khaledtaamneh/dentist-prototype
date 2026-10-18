@@ -39,7 +39,6 @@
       Mobile: fieldValue("mobile"),
       "Treatment needed": fieldValue("treatment"),
       "Preferred doctor": fieldValue("doctor") || (isAr ? "غير محدد" : "Not specified"),
-      Date: fieldValue("date"),
       Language: isAr ? "Arabic" : "English",
       Submitted: new Date().toISOString()
     };
