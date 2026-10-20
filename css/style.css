@@ -398,11 +398,6 @@ a {
   font-family: var(--display-ar);
 }
 
-.optional-hint {
-  color: var(--muted);
-  font-size: 0.88em;
-}
-
 .form-label {
   color: var(--teal-deep);
   font-size: 1.08rem;
